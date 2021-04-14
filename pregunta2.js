@@ -15,8 +15,51 @@
   }
 
 const sale = function (article, cant){
+
+    switch (article) {
+      case 'shoes':
+        if(Haycantidad(inventory.shoes, cant)){
+          inventory.shoes = inventory.shoes - cant
+          return 200
+        }
+        return 500
+        break;
+        case 'socks':
+          if(Haycantidad(inventory.socks, cant)){
+            inventory.socks = inventory.socks - cant
+            return 200
+          }
+          return 500
+          break;
+          case 'shirts':
+            if(Haycantidad(inventory.shirts, cant)){
+              inventory.shirts = inventory.shirts - cant
+              return 200
+            }
+            return 500
+            break;
+            case 'pants':
+              if(Haycantidad(inventory.pants, cant)){
+                inventory.pants = inventory.pants - cant
+                return 200
+              }
+              return 500
+              break;
+      default:
+        break;
+        return console.log('Articulo inexistente');
+    }
+    
   
 }
+  function Haycantidad(arti, cant){
+  if( cant <= arti ){
+    return true;
+  }else{
+  return false;
+  }
+}
+
 
 // TESTS (no modificar)
 console.log(sale('shoes',8) === 200 && inventory.shoes === 2);

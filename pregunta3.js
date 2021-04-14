@@ -3,7 +3,20 @@
 // si la longitud del array es < 3 se debe retornar undefined
 
 const greater3 = nums => {
-    
+   let numGrande = -99;
+   let numSeg = -999;
+   let tercerMayor = -9999;
+
+    nums.forEach(x => {
+            if(x >= numGrande){
+                numGrande = x;
+            }else if(x > numSeg){
+                numSeg = x;
+            }else if(x > tercerMayor && x < numGrande && x < numSeg){
+                tercerMayor = x;
+            }  
+    });
+    return tercerMayor
 }
 
 

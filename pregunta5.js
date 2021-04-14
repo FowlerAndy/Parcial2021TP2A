@@ -20,3 +20,11 @@ const beers = [
     { name: 'Stolen Fruit', abv: 4.6, label: 'https://s3.amazonaws.com/brewerydbapi/beer/YGT30k/upload_uVCHP7-large.png', type: 'Wheat' },
 ];
 
+function cambiarLabel(beers) {
+  return beers.map(k => ({name: k.name, abv: k.abv, 
+  label: ('https://tecnoshare.sharepoint.com/sites/beer/' + k.label.split('https://s3.amazonaws.com/brewerydbapi/beer/')[1].split('/')[0] + '/' + k.name.replace(' ','' ) + '.png'), 
+  type: k.type}))
+
+}
+console.log(cambiarLabel(beers));
+
